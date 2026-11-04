@@ -1,28 +1,41 @@
 # Christophe Abelem
 
-Computer Engineering student at CESUPA (Belém, Brazil), building quantitative finance projects on digital assets: DeFi, stablecoins and tokenized real-world assets (RWA).
+Computer Engineering student focused on quantitative finance for digital assets
 
-My work sits between finance and engineering: stochastic models, simulation and on-chain data, written as reproducible Python code with validated results.
+Computer Engineering at CESUPA (Belém, Brazil). I build quantitative finance projects on DeFi, stablecoins and tokenized real-world assets (RWA): stochastic models, simulation engines and on-chain data, written as reproducible Python code. I also work as a real estate investment analyst, doing ROI and data analysis in Python and SQL.
 
-## Projects
+## Featured projects
 
-| Project | Question | Key result | Links |
-|---|---|---|---|
-| **Uniswap v3 LP Backtesting Engine** *(in progress)* | Which range and rebalancing rule maximizes risk-adjusted returns for a liquidity provider in the USDC/WETH 0.05% pool (2021–2026)? | Event-level replay of millions of on-chain swaps, with fees, impermanent loss and real gas costs | Coming soon |
-| **Circle (CRCL) Valuation with Stochastic Rates** | How much is Circle worth when revenue depends on stochastic interest rates and USDC supply? | At $82.22 the market prices about 24% a year of USDC growth to 2030, roughly 60% of Circle's 40% target | [Repo](https://github.com/ChristopheAbelem/circle-valuation) · [Report](https://github.com/ChristopheAbelem/circle-valuation/blob/main/report/CRCL_valuation_report.pdf) |
-| **M&A Post-Mortem: Agnico Eagle & Kirkland Lake Gold** | Did the C$13.5B merger create value beyond the gold price and the sector? | Unit costs grew about 10 points less than peers', but reported synergies explain at most a quarter of that advantage | [Repo](https://github.com/ChristopheAbelem/agnico-kirkland-ma-analysis) · [Dashboard](https://agnico-kirkland-merger.streamlit.app) |
-| **Valuation Methods by Sector: PLD, SOFI & MTB** | How must valuation method change for a REIT, a lending fintech and a regional bank? | DCF fails for REITs and lenders; P/FFO comps and tangible book value give defensible values | [Repo](https://github.com/ChristopheAbelem/pld-sofi-valuation) |
+**Uniswap v3 LP Backtesting Engine** *(in progress)*
 
-## Methods and tools
+A Python package that replays every swap of the Uniswap v3 USDC/WETH pool since 2021, collected directly from on-chain event logs, to test liquidity provision strategies. Simulates concentrated liquidity positions swap by swap, with fee accrual, impermanent loss and real gas costs, and compares range and rebalancing rules across market regimes. Includes a resumable collector with retry and checkpointing, and unit tests against the official Uniswap v3 math.
+`Python` `SQLite` `Etherscan API` `pytest` `Streamlit` `Plotly`
 
-**Quantitative finance:** DCF and reverse DCF, comparables, Monte Carlo simulation, Vasicek and GBM, Itô's lemma, Cholesky correlation, scenario and sensitivity analysis.
+**[Circle (CRCL) Valuation with Stochastic Interest Rates](https://github.com/ChristopheAbelem/circle-valuation)**
 
-**Engineering and data:** Python (pandas, NumPy, SciPy, SQLAlchemy), SQL and SQLite, Streamlit, Plotly, on-chain event data (Etherscan API), Git.
+A stochastic DCF of Circle, the issuer of USDC, whose revenue depends on interest rates and stablecoin supply. Models the short rate (Vasicek) and USDC supply (geometric Brownian motion, solved with Itô's lemma) as correlated processes via Cholesky decomposition, values the company on 10,000 Monte Carlo paths, and runs a reverse DCF to extract what the share price implies. Every simulation is validated against closed-form results.
+`Python` `NumPy` `SciPy` `pandas` `Monte Carlo` `Jupyter`
 
-## Experience
+**[M&A Post-Mortem: Agnico Eagle & Kirkland Lake Gold](https://github.com/ChristopheAbelem/agnico-kirkland-ma-analysis)**
 
-- **Real Estate Investment Analyst**, Thomas Investimentos (2026–present): ROI analysis for property investments and real estate data analysis in Python and SQL.
-- **Research member**, LAPES Software Engineering Research Lab, CESUPA (2024–present).
+An evaluation of a C$13.5B all-stock gold mining merger against its peers (Newmont and Barrick). Reconstructs the deal terms from filings and tests the promised synergies through announcement returns, margins, all-in sustaining costs, asset-level results and valuation multiples. Published as an interactive dashboard.
+`Python` `SQL` `SQLite` `Streamlit` `Plotly` `pandas`
+
+**[Valuation Methods by Sector: PLD, SOFI & MTB](https://github.com/ChristopheAbelem/pld-sofi-valuation)**
+
+A comparison of how valuation method must adapt to sector economics, using an industrial REIT, a lending fintech and a regional bank. Applies DCF, comparable multiples (P/FFO, P/E) and net asset value, and diagnoses why standard methods break for each business model.
+`Python` `pandas` `SQLAlchemy` `SQLite` `matplotlib`
+
+## Stack
+
+| Area | Technologies |
+|---|---|
+| Quantitative finance | DCF and reverse DCF, comparables, Monte Carlo simulation, stochastic differential equations, Vasicek, GBM, Itô's lemma |
+| Data and engineering | Python, pandas, NumPy, SciPy, SQLAlchemy, pytest, Git |
+| Databases | SQL, SQLite, PostgreSQL |
+| Visualization | Streamlit, Plotly, matplotlib |
+| Blockchain data | Ethereum event logs, ABI decoding, Etherscan API |
+| Languages | Portuguese (native), English (fluent), Spanish (intermediate) |
 
 ## Contact
 
