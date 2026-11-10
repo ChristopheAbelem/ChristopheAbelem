@@ -6,7 +6,7 @@ Computer Engineering at CESUPA (Belém, Brazil). I build quantitative finance pr
 
 ## Featured projects
 
-**Uniswap v3 LP Backtesting Engine** *(in progress)*
+**[Uniswap v3 LP Backtesting Engine](https://github.com/ChristopheAbelem/uniswap-lp-backtest)**
 
 A Python package that replays every swap of the Uniswap v3 USDC/WETH pool since 2021, collected directly from on-chain event logs, to test liquidity provision strategies. Simulates concentrated liquidity positions swap by swap, with fee accrual, impermanent loss and real gas costs, and compares range and rebalancing rules across market regimes. Includes a resumable collector with retry and checkpointing, and unit tests against the official Uniswap v3 math.
 `Python` `SQLite` `Etherscan API` `pytest` `Streamlit` `Plotly`
